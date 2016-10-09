@@ -1,6 +1,7 @@
-var express = require('express')  
-var body_parser = require('body-parser')
-var app = express()
+const
+    express = require('express'),
+    body_parser = require('body-parser'),
+    app = express()
 
 app.use(express.static('public'))  
 
@@ -14,7 +15,7 @@ app.get('/', function (req, res) {
 })
 
 app.post('/ajax', function (req, res) {  
-    var data = JSON.parse(req.body.data)
+    const data = JSON.parse(req.body.data)
     res.json({
         message:
             `This comes from an AJAX POST call! The message sent to the server was "${data.message}" `

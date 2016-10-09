@@ -1,8 +1,12 @@
-var R = require('ramda')
+const
+    R = require('ramda'),
+    fetch = require('fetch-polyfill')
 
-var ajax_call = options =>
+    console.log(fetch)
+
+const ajax_call = options =>
     () => {
-        var request = new XMLHttpRequest()
+        const request = new XMLHttpRequest()
 
         request.open(
             options.request_type,
@@ -18,7 +22,7 @@ var ajax_call = options =>
             if (this.status >= 200
                 && this.status < 400) {
 
-                var data = JSON.parse(this.response)
+                const data = JSON.parse(this.response)
                 options.success(data)
             } else {
                 options.failure()
@@ -44,4 +48,9 @@ document.querySelector('#clickthis').onclick =
         data: {
             message: 'Bananas are my friends'
         }
+    })
+
+document.querySelector('#clickthat').onclick = () =>
+    fetch('/ajax').then(function(data) {
+        document.querySelector('#message').innerHTML = data.message
     })
