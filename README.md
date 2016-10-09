@@ -1,2 +1,1 @@
-# fetch
-An example project for showcasing the fetch api
+A fetch api example with a Node/Express back-end
