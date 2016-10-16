@@ -1,6 +1,7 @@
 const
     R = require('ramda'),
-    fetch = require('fetch-polyfill')
+    fetch = require('fetch-polyfill'),
+    Promise = require('es6-promise-polyfill').Promise
 
     console.log(fetch)
 
