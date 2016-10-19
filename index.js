@@ -15,10 +15,9 @@ app.get('/', function (req, res) {
 })
 
 app.post('/ajax', function (req, res) {  
-    const data = JSON.parse(req.body.data)
     res.json({
         message:
-            `This comes from an AJAX POST call! The message sent to the server was "${data.message}" `
+            `This comes from an AJAX POST call! The message sent to the server was "${req.body.data.message}" `
     })
 })
 
