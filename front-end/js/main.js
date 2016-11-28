@@ -1,5 +1,3 @@
-const
-    R = require('ramda')
 require('whatwg-fetch')
 
 document.querySelector('#clickit').onclick = () =>
